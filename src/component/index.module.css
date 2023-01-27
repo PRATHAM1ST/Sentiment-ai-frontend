@@ -1,0 +1,65 @@
+.section {
+	background-color: #b9c2b6;
+	padding: 2em 1em;
+	display: flex;
+	flex-direction: column;
+	border-radius: 1em;
+	gap: 1em;
+    width: 500px;
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 1em;
+}
+
+.body {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+    font-weight: 600;
+}
+
+.list {
+	list-style-type: circle;
+	background-color: #d3e1fa;
+	border-radius: 1em;
+	padding: 0.6em 1em;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.numbers {
+	background-color: white;
+	padding: 0 0.5em;
+	border-radius: 100em;
+}
+
+.score{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.score > h4{
+    font-size: .75em;
+    margin: 0;
+}
+
+.score > h1{
+    font-size: 3em;
+    line-height: 1em;
+    margin: 0;
+}
+
+.piechart{
+    height: 200px;
+    width: 200px;
+    background-color: white;
+    border-radius: 100em;
+    clip-path: polygon(50% 50%, 0% 100%, 100% 0%, 100% 10%);
+}
