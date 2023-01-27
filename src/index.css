@@ -1,5 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
+:root{
+    --primary-clr: #181818;
+    --secondary-clr: rgb(72, 75, 78);
+}
+
 *{
     font-family: 'Poppins', sans-serif;
+    color: white;
+}
+
+body{
+    background-color: var(--secondary-clr);
+}
+
+#app{
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+    padding: 50px 100px;
 }
