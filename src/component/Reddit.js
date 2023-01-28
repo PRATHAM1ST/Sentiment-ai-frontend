@@ -14,7 +14,7 @@ export default function TopLeft() {
 	return (
 		<section className={styles.section}>
 			<div className={styles.header}>
-				<h2>Summary</h2>
+				<h2>Reddit</h2>
 				<div className="options">ooo</div>
 			</div>
 			<div className={styles.body}>

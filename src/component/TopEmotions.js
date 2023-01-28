@@ -11,7 +11,7 @@ export default function TopCenter() {
 		{ name: "Overview", color: "skyblue", percentage: 20 },
 		{ name: "Campaigns", color: "lime", percentage: 20 },
 		{ name: "Ad Group", color: "grey", percentage: 20 },
-		{ name: "Keywords", color: "yellow", percentage: 20 },
+		{ name: "Keywords", color: "yellow", percentage: 50 },
 		{ name: "Cool", color: "pink", percentage: 20 },
 	]);
 

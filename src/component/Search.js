@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import styles from "./index.module.css";
 
-export default function Search() {
+export default function Search({ setQueryGiven }) {
 	const searchRef = useRef(null);
 	const [userSearch, setUserSearch] = useState({ search: "", datetime: "" });
 
@@ -13,12 +13,13 @@ export default function Search() {
 	};
 
 	function UserSearch(e) {
-		if(e.code === "Enter"){
+		if (e.code === "Enter") {
 			setUserSearch({
 				search: searchRef.current.value,
-				datetime: new Date().toUTCString() + ""
-			})
-			searchRef.current.value = ""
+				datetime: new Date().toUTCString() + "",
+			});
+			searchRef.current.value = "";
+			setQueryGiven();
 		}
 	}
 
@@ -32,12 +33,8 @@ export default function Search() {
 				onKeyDown={UserSearch}
 			/>
 			<div className={styles.usersearch}>
-				<div className={styles.searchtime}>
-					{userSearch.datetime}
-				</div>
-				<div className={styles.searchtitle}>
-					{userSearch.search}
-				</div>
+				<div className={styles.searchtime}>{userSearch.datetime}</div>
+				<div className={styles.searchtitle}>{userSearch.search}</div>
 			</div>
 		</div>
 	);

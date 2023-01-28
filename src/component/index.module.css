@@ -4,6 +4,7 @@
 	justify-content: center;
 	align-items: center;
 	gap: 26px;
+	width: 100%;	
 }
 
 .search {
@@ -166,6 +167,7 @@
 	gap: 1em;
 	overflow-x: scroll;
 	scrollbar-width: 5px;
+	width: 100%;
 }
 
 /* width */
