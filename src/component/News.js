@@ -1,49 +1,55 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./index.module.css";
 import Marquee from "react-fast-marquee";
+import useNewsData from "../hooks/useNewsData";
 
-export default function News() {
+export default function News({ queryGiven }) {
+	const [news, setNews] = useNewsData();
+	useEffect(()=>{
+		setNews(queryGiven)
+	}, [])
+
 	const [newsData, setNewsData] = useState([
 		{
-			title: "Cool",
+			title: "News",
 			link: "https://google.com",
 			datetime: "2023",
-			data: "fen frnjnfr krf kj cjkjcdksnckjnd",
+			data: "Breaking News...\nSomething has happened and you might want to see it.",
 		},
 		{
-			title: "Cool",
+			title: "News",
 			link: "https://google.com",
 			datetime: "2023",
-			data: "fen frnjnfr krf kj cjkjcdksnckjnd",
+			data: "Breaking News...\nSomething has happened and you might want to see it.",
 		},
 		{
-			title: "Cool",
+			title: "News",
 			link: "https://google.com",
 			datetime: "2023",
-			data: "fen frnjnfr krf kj cjkjcdksnckjnd",
+			data: "Breaking News...\nSomething has happened and you might want to see it.",
 		},
 		{
-			title: "Cool",
+			title: "News",
 			link: "https://google.com",
 			datetime: "2023",
-			data: "fen frnjnfr krf kj cjkjcdksnckjnd",
+			data: "Breaking News...\nSomething has happened and you might want to see it.",
 		},
 		{
-			title: "Cool",
+			title: "News",
 			link: "https://google.com",
 			datetime: "2023",
-			data: "fen frnjnfr krf kj cjkjcdksnckjnd",
+			data: "Breaking News...\nSomething has happened and you might want to see it.",
 		},
 		{
-			title: "Cool",
+			title: "News",
 			link: "https://google.com",
 			datetime: "2023",
-			data: "fen frnjnfr krf kj cjkjcdksnckjnd",
+			data: "Breaking News...\nSomething has happened and you might want to see it.",
 		},
 	]);
 
 	return (
-		<Marquee gradientColor={[72, 75, 78]}>
+		<Marquee gradientColor={[40, 40, 40]}>
 			<div className={styles.newsmarquee}>
 				{newsData?.map((news, idx) => (
 					<div className={styles.news} key={idx}>

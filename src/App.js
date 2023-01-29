@@ -4,25 +4,25 @@ import "react-toastify/dist/ReactToastify.css";
 import Analytics from "./component/Analytics";
 import Memes from "./component/Memes";
 import News from "./component/News";
+import Example from "./component/sandbox.tsx";
 import Search from "./component/Search";
+// import Pie from "./component/pie";
 
 function App() {
-	const [queryGiven, setQueryGiven] = useState(false);
-
-	useEffect(() => {
-		console.log(queryGiven);
-	}, [queryGiven]);
+	const [queryGiven, setQueryGiven] = useState(null);
 
 	return (
 		<div id="app">
 			<Search setQueryGiven={setQueryGiven} />
-			{queryGiven ?? (
+			{queryGiven !== null && (
 				<>
 					<Analytics />
-					<News />
-					<Memes />
+					<News setQueryGiven={queryGiven} />
+					<Memes setQueryGiven={queryGiven} />
 				</>
 			)}
+			{/* <Pie /> */}
+			{/* <Example /> */}
 			<ToastContainer theme="dark" />
 		</div>
 	);

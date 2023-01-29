@@ -1,0 +1,261 @@
+.card {
+	position: relative;
+	overflow: hidden;
+	z-index: 0;
+}
+
+.card::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background: hsla(16, 100%, 50%, 1);
+
+	background: linear-gradient(
+		90deg,
+		hsla(16, 100%, 50%, 1) 0%,
+		hsla(36, 100%, 51%, 1) 100%
+	);
+
+	background: -moz-linear-gradient(
+		90deg,
+		hsla(16, 100%, 50%, 1) 0%,
+		hsla(36, 100%, 51%, 1) 100%
+	);
+
+	background: -webkit-linear-gradient(
+		90deg,
+		hsla(16, 100%, 50%, 1) 0%,
+		hsla(36, 100%, 51%, 1) 100%
+	);
+	background-size: 1600% 1600%;
+	background-position: 0% 0%;
+	animation: background-animate 3s linear alternate infinite;
+	z-index: -2;
+}
+
+@keyframes background-animate {
+	0%{
+		background-position: 0% 0%;
+	}
+	100%{
+		background-position: 100% 100%;
+	}
+}
+.card::after {
+	content: "";
+	position: absolute;
+	top: 1%;
+	left: 1%;
+	height: 98%;
+	width: 98%;
+	background-color: var(--primary-clr);
+	border-radius: inherit;
+	z-index: -1;
+}
+
+.blobs {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.blob1 {
+	position: absolute;
+	width: 30%;
+	height: 30%;
+	top: 0%;
+	left: 0%;
+	transform: translate(-50%, -50%);
+	/* animation: blob1 100s linear alternate-reverse infinite; */
+	/* transition: 2s ease-in; */
+	fill: linear;
+}
+
+.blob2 {
+	position: absolute;
+	width: 30%;
+	height: 30%;
+	top: 0%;
+	left: 0%;
+	transform: translate(-50%, -50%);
+	/* transition: 2s ease; */
+}
+
+@keyframes blob1 {
+	0% {
+		top: 56.879999999999995%;
+		left: 29.659999999999997%;
+	}
+	5% {
+		top: 27.96%;
+		left: 5.6000000000000005%;
+	}
+	10% {
+		top: 99.22999999999999%;
+		left: 30.72%;
+	}
+	15% {
+		top: 89.05%;
+		left: 54.37%;
+	}
+	20% {
+		top: 32.36%;
+		left: 39.92%;
+	}
+	25% {
+		top: 1.71%;
+		left: 59.230000000000004%;
+	}
+	30% {
+		top: 30.470000000000002%;
+		left: 4.74%;
+	}
+	35% {
+		top: 61.69%;
+		left: 44.519999999999996%;
+	}
+	40% {
+		top: 20.26%;
+		left: 37.63%;
+	}
+	45% {
+		top: 36.7%;
+		left: 65.42999999999999%;
+	}
+	50% {
+		top: 88.31%;
+		left: 68.97999999999999%;
+	}
+	55% {
+		top: 9.959999999999999%;
+		left: 81.51%;
+	}
+	60% {
+		top: 92.91%;
+		left: 38.71%;
+	}
+	65% {
+		top: 68.84%;
+		left: 33.09%;
+	}
+	70% {
+		top: 46.11%;
+		left: 88.46000000000001%;
+	}
+	75% {
+		top: 66.05%;
+		left: 17.560000000000002%;
+	}
+	80% {
+		top: 80.58999999999999%;
+		left: 20.200000000000003%;
+	}
+	85% {
+		top: 71.34%;
+		left: 36.38%;
+	}
+	90% {
+		top: 29.57%;
+		left: 53.959999999999994%;
+	}
+	95% {
+		top: 56.06%;
+		left: 2.5700000000000003%;
+	}
+	100% {
+		top: 79.78%;
+		left: 79.39%;
+	}
+}
+@keyframes blob2 {
+	0% {
+		top: 79.41%;
+		left: 70.92%;
+	}
+	5% {
+		top: 47.58%;
+		left: 69.66%;
+	}
+	10% {
+		top: 42.199999999999996%;
+		left: 95.69%;
+	}
+	15% {
+		top: 87.2%;
+		left: 19.82%;
+	}
+	20% {
+		top: 38.89%;
+		left: 42.94%;
+	}
+	25% {
+		top: 31.009999999999998%;
+		left: 54.339999999999996%;
+	}
+	30% {
+		top: 77.16%;
+		left: 2.17%;
+	}
+	35% {
+		top: 46.43%;
+		left: 36.24%;
+	}
+	40% {
+		top: 23.35%;
+		left: 48.52%;
+	}
+	45% {
+		top: 15.85%;
+		left: 97.06%;
+	}
+	50% {
+		top: 26.71%;
+		left: 21.959999999999997%;
+	}
+	55% {
+		top: 99.51%;
+		left: 69.26%;
+	}
+	60% {
+		top: 97.52%;
+		left: 88.3%;
+	}
+	65% {
+		top: 31.490000000000002%;
+		left: 54.35%;
+	}
+	70% {
+		top: 40.86%;
+		left: 32.89%;
+	}
+	75% {
+		top: 86.85000000000001%;
+		left: 20.72%;
+	}
+	80% {
+		top: 79.42%;
+		left: 12.02%;
+	}
+	85% {
+		top: 71.87%;
+		left: 13.86%;
+	}
+	90% {
+		top: 62.29%;
+		left: 9.120000000000001%;
+	}
+	95% {
+		top: 95.13000000000001%;
+		left: 62.160000000000004%;
+	}
+	100% {
+		top: 83.59%;
+		left: 60.650000000000006%;
+	}
+}

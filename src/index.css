@@ -2,7 +2,7 @@
 
 :root{
     --primary-clr: #181818;
-    --secondary-clr: rgb(72, 75, 78);
+    --secondary-clr: rgb(40, 40, 40);
 }
 
 *{
@@ -17,7 +17,7 @@ body{
 }
 
 #app{
-    min-height: 100vh;
+    min-height: calc(100vh - 100px);
     display: flex;
     justify-content: center;
     align-items: center;
