@@ -22,6 +22,8 @@ import browserUsage, {
 	BrowserUsage as Browsers,
 } from "@visx/mock-data/lib/mocks/browserUsage";
 import { scaleOrdinal } from "@visx/scale";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChartSimple } from "@fortawesome/free-solid-svg-icons";
 
 let defaultData = { name: "total", percentage: 1000 };
 
@@ -79,7 +81,7 @@ function AnimatedPie({
 					style={{
 						stroke: "#646464",
 						strokeWidth: "1px",
-						strokeDasharray: "2, 2",
+						// strokeDasharray: "2, 2",
 						strokeLinejoin: "round",
 					}}
 				/>
@@ -186,7 +188,7 @@ export default function TopCenter() {
 		>
 			<div className={styles.header}>
 				<h2>Top 5 Emotions</h2>
-				{/* <div className="options">ooo</div> */}
+				<h1><FontAwesomeIcon icon={faChartSimple}/></h1>
 			</div>
 			<div className={styles.piechartbody}>
 				{/* <div className={styles.score}>

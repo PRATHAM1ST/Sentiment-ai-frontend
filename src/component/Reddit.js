@@ -2,6 +2,8 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import styles from './index.module.css';
 import reddit from './reddit.module.css';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faRedditAlien } from "@fortawesome/free-brands-svg-icons";
 
 export default function TopLeft() {
 	const [elements, setElements] = useState([
@@ -31,6 +33,7 @@ export default function TopLeft() {
 		<section className={`${styles.section} ${reddit.card}`} id="twitter">
 			<div className={styles.header}>
 				<h2>Reddit</h2>
+				<h1><FontAwesomeIcon icon={faRedditAlien}/></h1>
 				{/* <div className="options">ooo</div> */}
 			</div>
 			<div className={styles.body}>

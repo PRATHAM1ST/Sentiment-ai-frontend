@@ -17,8 +17,8 @@ function App() {
 			{queryGiven !== null && (
 				<>
 					<Analytics />
-					<News setQueryGiven={queryGiven} />
-					<Memes setQueryGiven={queryGiven} />
+					<News query={queryGiven} />
+					<Memes query={queryGiven} />
 				</>
 			)}
 			{/* <Pie /> */}

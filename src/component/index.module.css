@@ -1,7 +1,7 @@
 .searchbox {
 	display: flex;
-	flex-direction: column;
-	justify-content: center;
+	flex-direction: row;
+	justify-content: space-between;
 	align-items: center;
 	gap: 26px;
 	width: 100%;
@@ -14,6 +14,19 @@
 	width: calc(fit-content + 2em);
 }
 
+.searchIcon {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: fit-content;
+	height: 100%;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	padding-left: 0.5em;
+	opacity: 0.5;
+}
+
 .search > input {
 	position: relative;
 	border-radius: 100em;
@@ -21,7 +34,7 @@
 	/* border: 1px solid white; */
 	border: none;
 	padding: 0.5em 1em;
-	text-align: center;
+	padding-left: 3em;
 	font-size: 22px;
 	font-weight: 500;
 	background-color: var(--primary-clr);
@@ -47,28 +60,28 @@
 
 .usersearch {
 	position: relative;
+	width: fit-content;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
-	margin: auto;
 	padding: 1em;
-	background: #ffefba; /* fallback for old browsers */
+	/* background: #ffefba; 
 	background: -webkit-linear-gradient(
 		to right,
 		#ffffff,
 		#ffefba
-	); /* Chrome 10-25, Safari 5.1-6 */
+	);
 	background: linear-gradient(
 		to right,
 		#ffffff,
 		#ffefba
-	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	);
 
 	border-radius: 1em;
 	background-size: 1600% 1600%;
 	background-position: 0% 0%;
-	animation: background-animate 3s linear alternate infinite;
+	animation: background-animate 3s linear alternate infinite; */
 	z-index: -2;
 }
 
@@ -82,7 +95,7 @@
 }
 
 .usersearch::after {
-	content: "";
+	/* content: "";
 	position: absolute;
 	top: 1%;
 	left: 0.5%;
@@ -90,7 +103,7 @@
 	width: 99%;
 	background-color: var(--primary-clr);
 	border-radius: inherit;
-	z-index: -1;
+	z-index: -1; */
 }
 
 .searchtime {
@@ -184,6 +197,7 @@
 	flex-direction: row;
 	gap: var(--gap);
 	padding-right: var(--gap);
+	max-height: 500px;
 }
 
 .news,
@@ -198,7 +212,14 @@
 
 .news {
 	max-width: 200px;
+	max-height: 100%;
+	gap: 1em;
 }
+/* 
+.news:last-child{
+	margin-top: auto;
+	margin-bottom: 0;
+} */
 
 .meme {
 	gap: 0.5em;
@@ -209,12 +230,20 @@
 	z-index: 0;
 }
 
-.news > p,
 .meme > p {
 	margin: 0;
 	font-size: 12px;
 	font-weight: 400;
 	height: 3em;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.news > p {
+	margin: 0;
+	font-size: 12px;
+	/* font-weight: 400;
+	height: 3em; */
 	text-overflow: ellipsis;
 	overflow: hidden;
 }
@@ -235,7 +264,18 @@
 
 .news > a,
 .meme > a {
-	background-color: rgb(69, 110, 126);
+	background: #000428; /* fallback for old browsers */
+	background: -webkit-linear-gradient(
+		to right,
+		#004e92,
+		#000428
+	); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(
+		to right,
+		#004e92,
+		#000428
+	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 	padding: 0.75em 1.5em;
 	border-radius: 1em;
 	text-align: center;

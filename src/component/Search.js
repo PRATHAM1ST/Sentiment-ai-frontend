@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import useSearchData from "../hooks/useSearchData";
 import useNewsData from "../hooks/useNewsData";
 import styles from "./index.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 const client = new WebSocket("ws://localhost:5000");
 
@@ -33,24 +35,34 @@ export default function Search({ setQueryGiven }) {
 			className={styles.searchbox}
 			style={{ gap: userSearch.search ? "2em" : "0" }}
 		>
+			{userSearch.search && (
+				<div className={styles.usersearch}>
+					<h1>Sentiments-AI</h1>
+					<small>❤️ with AInoders</small>
+				</div>
+			)}
 			<div className={styles.search}>
+				
 				<input
 					autoFocus
 					ref={searchRef}
 					className={styles.search}
 					type="text"
-					placeholder="Ctrl + Space"
+					placeholder={`Ctrl + Space`}
 					onKeyDown={UserSearch}
 				/>
+				<h1 className={styles.searchIcon}>
+					<FontAwesomeIcon icon={faSearch} />
+				</h1>
 			</div>
 			{userSearch.search && (
 				<div className={styles.usersearch}>
-					<div className={styles.searchtime}>
-						{userSearch.datetime}
-					</div>
-					<div className={styles.searchtitle}>
+					<h1 className={styles.searchtitle}>
 						{userSearch.search}
-					</div>
+					</h1>
+					<small className={styles.searchtime}>
+						{userSearch.datetime}
+					</small>
 				</div>
 			)}
 		</div>

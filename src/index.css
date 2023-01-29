@@ -17,7 +17,7 @@ body{
 }
 
 #app{
-    min-height: calc(100vh - 100px);
+    min-height: calc(100vh - 00px);
     display: flex;
     justify-content: center;
     align-items: center;
