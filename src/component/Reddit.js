@@ -7,27 +7,27 @@ import { faRedditAlien } from "@fortawesome/free-brands-svg-icons";
 import useNotification from "../hooks/useNotification";
 
 
-export default function TopLeft() {
+export default function Reddit() {
 	const [elements, setElements] = useState([
 		{
-			emotion: "Anger",
-			percentage: 64.3,
+			name: "Waiting...",
+			value: 0,
 		},
 		{
-			emotion: "Happiness",
-			percentage: 10.2,
+			name: "Waiting...",
+			value: 0,
 		},
 		{
-			emotion: "Frustration",
-			percentage: 5.4,
+			name: "Waiting...",
+			value: 0,
 		},
 		{
-			emotion: "Joy",
-			percentage: 6.7,
+			name: "Waiting...",
+			value: 0,
 		},
 		{
-			emotion: "Temptation",
-			percentage: 3.4,
+			name: "Waiting...",
+			value: 0,
 		},
 	]);
 	const notification = useNotification();
@@ -48,8 +48,8 @@ export default function TopLeft() {
 			<div className={styles.body}>
 				{elements?.map((element, idx) => (
 					<div className={styles.list} key={idx}>
-						<li>{element.emotion}</li>
-						<div className={styles.numbers}>{element.percentage + " %"}</div>
+						<li>{element.name}</li>
+						<div className={styles.numbers}>{element.value + " %"}</div>
 					</div>
 				))}
 			</div>

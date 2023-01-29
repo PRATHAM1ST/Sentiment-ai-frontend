@@ -2,22 +2,13 @@ import React from "react";
 import { animated, useTransition, interpolate } from "@react-spring/web";
 import { Group } from "@visx/group";
 import { Pie } from "@visx/shape";
-import { LegendOrdinal } from "@visx/legend";
 import { scaleThreshold } from "@visx/scale";
-import {
-	CircleSubject,
-	EditableAnnotation,
-	Label,
-	Annotation,
-} from "@visx/annotation";
 import { Text } from "@visx/text";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import styles from "./index.module.css";
 import topEmotions from "./topEmotions.module.css";
-import letterFrequency, {
-	LetterFrequency,
-} from "@visx/mock-data/lib/mocks/letterFrequency";
+import letterFrequency from "@visx/mock-data/lib/mocks/letterFrequency";
 import browserUsage, {
 	BrowserUsage as Browsers,
 } from "@visx/mock-data/lib/mocks/browserUsage";
@@ -77,11 +68,10 @@ function AnimatedPie({
 					onTouchStart={() => onClickDatum(arc)}
 					onMouseEnter={() => setActive(arc.data)}
 					onMouseLeave={() => setActive(defaultData)}
-					id={`${arc.data.name}`}
+					id={`${arc.data.name} ${arc.data.color}`}
 					style={{
 						stroke: "#646464",
 						strokeWidth: "1px",
-						// strokeDasharray: "2, 2",
 						strokeLinejoin: "round",
 					}}
 				/>
@@ -90,36 +80,13 @@ function AnimatedPie({
 					fill="white"
 					x={centroidX}
 					y={centroidY}
-					// x={centroidX > 0 ? centroidX + 10 : centroidX - 10}
-					// y={centroidY > 0 ? centroidY + 10 : centroidY - 10}
-					// y={centroidY}
 					dy="0.33em"
-					// dx= "-2em"
-					// angle={10}
-					// scaleToFit={true}
 					fontSize={10}
 					textAnchor="middle"
 					pointerEvents="none"
 				>
 					{getKey(arc)}
 				</text>
-				{/* // <animated.g style={{ opacity: props.opacity }}> */}
-				//{" "}
-				{/* <Annotation x={centroidX} y={centroidY}>
-					// 		<CircleSubject radius={0}/>
-					// 		<Label
-					// 			title={getKey(arc)}
-					// 			backgroundPadding={0}
-					// 			x={centroidX}
-					// 			y={centroidY}
-					// 			backgroundFill="rgba(0,0,0,0)"
-					// 			anchorLineStroke="rgba(0,0,0,0)"
-					// 			fontColor="#fff"
-					// 			showAnchorLine={false}
-					// 		/>
-					// 	</Annotation> */}
-				{/* // </animated.g> */}
-				{/* )} */}
 			</g>
 		);
 	});
@@ -166,20 +133,17 @@ export default function TopCenter() {
 	if (width < 10) return null;
 
 	const elements = [
-		{ name: "Anger", color: "#ea3546", percentage: 46 },
-		{ name: "Happiness", color: "#f9c80e", percentage: 30 },
-		{ name: "Frustration", color: "#662e9b", percentage: 20 },
-		{ name: "Humor", color: "#f86624", percentage: 10 },
-		{ name: "Sadness", color: "#43bccd", percentage: 4 },
+		{ name: "Waiting", color: "#ea3546", percentage: 20 },
+		{ name: "Waiting", color: "#f9c80e", percentage: 20 },
+		{ name: "Waiting", color: "#662e9b", percentage: 20 },
+		{ name: "Waiting", color: "#f86624", percentage: 20 },
+		{ name: "Waiting", color: "#43bccd", percentage: 20 },
 	];
 
 	const threshold = scaleThreshold({
 		domain: elements.map((e) => e.name),
 		range: elements.map((e) => e.color),
 	});
-
-	// const width = 180;
-	// const half = width / 2;
 
 	return (
 		<section
@@ -188,48 +152,15 @@ export default function TopCenter() {
 		>
 			<div className={styles.header}>
 				<h2>Top 5 Emotions</h2>
-				<h1><FontAwesomeIcon icon={faChartSimple}/></h1>
+				<h1>
+					<FontAwesomeIcon icon={faChartSimple} />
+				</h1>
 			</div>
 			<div className={styles.piechartbody}>
-				{/* <div className={styles.score}>
-					<h4>Total Emotions Analysed</h4>
-					<h1>2,390</h1>
-				</div> */}
 				<div className={styles.piechart}>
 					<svg width={width} height={width}>
 						<Group top={half} left={half}>
-							{/* <Pie
-								data={elements}
-								pieValue={(data) => data.percentage}
-								outerRadius={half}
-								innerRadius={({data})=>{
-									const size = active && active.name === data.name ? 20 : 10;
-									return half- size
-								}}
-								padAngle={0.09}
-							>
-								{(pie) =>
-									pie.arcs.map((arc) => (
-										<g
-											key={arc.data.name}
-											onMouseEnter={() => setActive(arc.data)}
-											onMouseLeave={() => setActive(null)}
-										>
-											<path
-												d={pie.path(arc)}
-												fill={arc.data.color}
-											></path>
-										</g>
-									))
-								}
-							</Pie> */}
 							<Pie
-								// selectedBrowser
-								// 	? browsers.filter(
-								// 			({ label }) =>
-								// 				label === selectedBrowser
-								// 	  )
-								// 	: browsers
 								data={elements}
 								pieValue={(data) => data.percentage}
 								outerRadius={radius}
@@ -252,10 +183,7 @@ export default function TopCenter() {
 													: label
 											)
 										}
-										getColor={
-											(arc) => arc.data.color
-											// console.log(arc.data.color)
-										}
+										getColor={(arc) => arc.data.color}
 									/>
 								)}
 							</Pie>

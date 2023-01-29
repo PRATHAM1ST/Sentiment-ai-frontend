@@ -10,27 +10,27 @@ import useNotification from "../hooks/useNotification";
 // 	console.log(`${index}%{\n\ttop: ${Math.random().toFixed(4)*100};\n\tleft: ${Math.random().toFixed(4)*100};\n}`)
 // }
 
-export default function TopLeft() {
+export default function Twitter() {
 	const [elements, setElements] = useState([
 		{
-			name: "Happiness",
-			value: 50.2,
+			name: "Waiting...",
+			value: 0,
 		},
 		{
-			name: "Anger",
-			value: 24.3,
+			name: "Waiting...",
+			value: 0,
 		},
 		{
-			name: "Frustration",
-			value: 5.4,
+			name: "Waiting...",
+			value: 0,
 		},
 		{
-			name: "Joy",
-			value: 3.67,
+			name: "Waiting...",
+			value: 0,
 		},
 		{
-			name: "Temptation",
-			value: 3.4,
+			name: "Waiting...",
+			value: 0,
 		},
 	]);
 

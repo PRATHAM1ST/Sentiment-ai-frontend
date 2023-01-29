@@ -6,10 +6,11 @@ export default function useNotification(){
 
     useEffect(()=>{
         if(notification && notification !== {} && notification !== null){
-            if(notification.status !== 404){
-                toast(notification.message);
-                setNotification()
+            switch(notification.status){
+                case(404):
+                    toast(notification.message);
             }
+
         }
 
     }, [notification])
