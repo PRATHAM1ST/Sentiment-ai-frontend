@@ -23,7 +23,7 @@ function App() {
 			)}
 			{/* <Pie /> */}
 			{/* <Example /> */}
-			<ToastContainer theme="dark" />
+			<ToastContainer />
 		</div>
 	);
 }

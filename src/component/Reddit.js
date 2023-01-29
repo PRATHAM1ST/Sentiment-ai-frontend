@@ -4,6 +4,8 @@ import styles from './index.module.css';
 import reddit from './reddit.module.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRedditAlien } from "@fortawesome/free-brands-svg-icons";
+import useNotification from "../hooks/useNotification";
+
 
 export default function TopLeft() {
 	const [elements, setElements] = useState([
@@ -28,6 +30,13 @@ export default function TopLeft() {
 			percentage: 3.4,
 		},
 	]);
+	const notification = useNotification();
+
+	useEffect(()=>{
+		if(elements){
+			notification({status: 200, message: "Reddit Posts were successfully analysed"})
+		}
+	},[elements])
 
 	return (
 		<section className={`${styles.section} ${reddit.card}`} id="twitter">

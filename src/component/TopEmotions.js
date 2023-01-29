@@ -25,7 +25,7 @@ import { scaleOrdinal } from "@visx/scale";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChartSimple } from "@fortawesome/free-solid-svg-icons";
 
-let defaultData = { name: "total", percentage: 1000 };
+let defaultData = { name: "Total", percentage: 1000 };
 
 const fromLeaveTransition = ({ endAngle }) => ({
 	// enter from 360° if end angle is > 180°
@@ -131,13 +131,13 @@ export default function TopCenter() {
 	// data and types
 	const margin = { top: 20, right: 20, bottom: 20, left: 20 };
 
-	const height = 300;
-	const width = 300;
+	const height = 350;
+	const width = 350;
 	const half = width / 2;
 	const innerWidth = width - margin.left - margin.right;
 	const innerHeight = height - margin.top - margin.bottom;
 	const radius = Math.min(innerWidth, innerHeight) / 2;
-	const donutThickness = 50;
+	const donutThickness = 60;
 
 	let animate = true;
 
@@ -166,11 +166,11 @@ export default function TopCenter() {
 	if (width < 10) return null;
 
 	const elements = [
-		{ name: "Anger", color: "#13005A", percentage: 46 },
-		{ name: "Happiness", color: "#820000", percentage: 30 },
-		{ name: "Frustration", color: "#3D1766", percentage: 20 },
-		{ name: "Humor", color: "#473C33", percentage: 10 },
-		{ name: "Sadness", color: "#CD0404", percentage: 4 },
+		{ name: "Anger", color: "#ea3546", percentage: 46 },
+		{ name: "Happiness", color: "#f9c80e", percentage: 30 },
+		{ name: "Frustration", color: "#662e9b", percentage: 20 },
+		{ name: "Humor", color: "#f86624", percentage: 10 },
+		{ name: "Sadness", color: "#43bccd", percentage: 4 },
 	];
 
 	const threshold = scaleThreshold({
@@ -262,9 +262,9 @@ export default function TopCenter() {
 
 							<Text
 								textAnchor="middle"
-								fontSize={14}
+								fontSize={20}
 								dy={-20}
-								fill="rgb(255, 255, 255)"
+								fill="black"
 							>
 								{active?.name}
 							</Text>
@@ -272,7 +272,7 @@ export default function TopCenter() {
 								textAnchor="middle"
 								dy={30}
 								fontSize={50}
-								fill="rgb(255,255,255)"
+								fill="black"
 							>
 								{(active?.percentage /
 									defaultData?.percentage) *

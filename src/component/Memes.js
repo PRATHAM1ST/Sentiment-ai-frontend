@@ -85,7 +85,7 @@ export default function Memes({ query }) {
 	return (
 		<>
 			<h1>
-			<small style={{fontWeight: 100}}>
+			<small style={{fontWeight: 220}}>
 					<FontAwesomeIcon icon={faMeteor} /> {" "}
 					Memes Feed on
 				</small>{" "}
@@ -107,8 +107,8 @@ export default function Memes({ query }) {
 							className={styles.header}
 							style={{ marginBottom: "1em" }}
 						>
-							<h2>{meme.username}</h2>
-							<small style={{ fontSize: 10 }}>
+							<h2 style={{color:'#1746A2'}} >{meme.username}</h2>
+							<small style={{ fontSize: 10, color:'#1746A2' }}>
 								{new Date(meme.created_at).toLocaleString()}
 							</small>
 						</div>

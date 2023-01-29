@@ -33,7 +33,7 @@
 	);
 	background-size: 1600% 1600%;
 	background-position: 0% 0%;
-	animation: background-animate 3s linear alternate infinite;
+	animation: background-animate 1s linear alternate infinite;
 	z-index: -2;
 }
 
